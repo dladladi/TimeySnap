@@ -3,6 +3,7 @@ using System.Diagnostics;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows.Input;
+using TimeySnap.Models;
 
 namespace TimeySnap.ViewModels;
 
@@ -25,14 +26,16 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         num = num + 1;
         Greeting = num.ToString();
-        var grim = new Process();
+        /*var grim = new Process();
         var startInfo = new ProcessStartInfo();
         startInfo.FileName = "grim";
         startInfo.Arguments = "/home/dadadi/Desktop/test.png";
         startInfo.UseShellExecute = false;
 
         grim.StartInfo = startInfo;
-        grim.Start();
+        grim.Start();*/
+        var TakeScreenShot = new Grim();
+        TakeScreenShot.hehe("/home/dadadi/Desktop/test.png");
 
     }
 }
