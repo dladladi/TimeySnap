@@ -26,9 +26,8 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         //num = num + 1;
         var SS = new Model();
-        string smth = SS.GetDateTime();
+        string smth = SS.Validation();
         Greeting = "/home/dadadi/Desktop/" + smth + ".png";
-        SS.TakeScreenShot("/home/dadadi/Desktop/" + smth + ".png");
 
     }
 }
