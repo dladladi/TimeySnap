@@ -24,18 +24,11 @@ public partial class MainWindowViewModel : ViewModelBase
 
     private void SS()
     {
-        num = num + 1;
-        Greeting = num.ToString();
-        /*var grim = new Process();
-        var startInfo = new ProcessStartInfo();
-        startInfo.FileName = "grim";
-        startInfo.Arguments = "/home/dadadi/Desktop/test.png";
-        startInfo.UseShellExecute = false;
-
-        grim.StartInfo = startInfo;
-        grim.Start();*/
-        var TakeScreenShot = new Grim();
-        TakeScreenShot.hehe("/home/dadadi/Desktop/test.png");
+        //num = num + 1;
+        var SS = new Model();
+        string smth = SS.GetDateTime();
+        Greeting = "/home/dadadi/Desktop/" + smth + ".png";
+        SS.TakeScreenShot("/home/dadadi/Desktop/" + smth + ".png");
 
     }
 }
