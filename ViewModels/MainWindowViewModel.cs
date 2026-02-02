@@ -9,7 +9,6 @@ namespace TimeySnap.ViewModels;
 public partial class MainWindowViewModel : ViewModelBase
 {
 
-    int num = 0;
     [ObservableProperty]
     private string greeting = "0";
 
@@ -17,20 +16,24 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public MainWindowViewModel()
     {
+        //Start All Validation and processes
         TakeSS = new RelayCommand(SS);
-        Greeting = num.ToString();
     }
 
     private void SS()
     {
+        //Declare Models and Services
         var model = new Model();
         var service = new Service();
 
+        //Declare path, FileName and FolderName
+        string Date = service.CurrentDate().ToString("yyy-MM-dd"); //get tdy's date
+        string FolderName = model.Validation(service.CurrentTime(), service.CurrentDate()); //get FolderName
+        string path = service.FolderCreate(Date, FolderName); //Create folder and get the Dir of the folder
+        string FileName = service.FileName(); //get the screenshot's name
 
-        string smth = model.Validation(service.CurrentTime(), service.CurrentDate());
-        Greeting = "/home/dadadi/Desktop/" + smth + ".png";
-        string path = service.FileCreate(smth);
-        service.TakeScreenShot(path + "/test.png");
+        Greeting = path + "/" + FileName + ".png"; //test output for path to show on UI
+        service.TakeScreenShot(path + "/" + FileName + ".png"); //Create the SS with the name provided inside the folder provided
 
     }
 }

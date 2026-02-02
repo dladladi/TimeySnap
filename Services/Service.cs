@@ -23,11 +23,6 @@ public class Service
 
     DateTime CurrentDateAndTime = DateTime.Now;
 
-    public string BothDateAndTime()
-    {
-        return CurrentDateAndTime.ToString();
-    }
-
     public TimeOnly CurrentTime()
     {
         TimeOnly Time = TimeOnly.FromDateTime(CurrentDateAndTime);
@@ -42,12 +37,17 @@ public class Service
 
     public string FileName()
     {
-        return CurrentDateAndTime.ToString();
+        return CurrentDateAndTime.ToString("yyyy-MM-dd_HH-mm-ss");
     }
 
-    public string FileCreate(string FolderName)
+    public string FolderCreate(string FolderName, string SubFolder)
     {
-        Directory.CreateDirectory("/home/dadadi/Desktop/" + FolderName);
-        return "/home/dadadi/Desktop/" + FolderName;
+        Directory.CreateDirectory("/home/dadadi/Desktop/" + FolderName + "/" + SubFolder);
+        return "/home/dadadi/Desktop/" + FolderName + "/" + SubFolder;
+    }
+
+    public void TdyFolderCreate(string TdyFolder)
+    {
+        Directory.CreateDirectory("/home/dadadi/Desktop/" + TdyFolder);
     }
 }
