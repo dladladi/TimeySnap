@@ -33,7 +33,7 @@ public partial class MainWindowViewModel : ViewModelBase
         string FileName = service.FileName(); //get the screenshot's name
 
         Greeting = FolderName; //test output for path to show on UI
-        //service.TakeScreenShot(path + "/" + FileName + ".png"); //Create SS
+        service.TakeScreenShot(path + "/" + FileName + ".png"); //Create SS
 
     }
 }
