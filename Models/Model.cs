@@ -129,4 +129,46 @@ public class Model
         }
         return "FreeTIME";
     }
+
+    /*private string WhichPeriod()
+    {
+        //List
+        TimeOnly[][] Start =
+        {
+
+          new[] {new TimeOnly(9,0,0), new TimeOnly(12, 0, 0), new TimeOnly(16, 0, 0)},  //Monday
+          new[] {new TimeOnly(9,0,0), new TimeOnly(10, 30, 0), new TimeOnly(16, 0, 0)}, //Tuesday
+          new[] {new TimeOnly(9,0,0) }, //Wednesday
+          new[] {new TimeOnly(10,30,0), new TimeOnly(12, 30, 0), new TimeOnly(14, 0, 0)}, //Thursday
+          new[] {new TimeOnly(9,0,0), new TimeOnly(16, 0, 0), new TimeOnly(17, 30, 0), new TimeOnly(19, 30, 0)}, //Friday
+        };
+
+        TimeOnly[][] End =
+        {
+          new[] {new TimeOnly(10,30,0), new TimeOnly(14, 0, 0), new TimeOnly(17, 30, 0)  }, //Monday
+          new[] {new TimeOnly(10,30,0), new TimeOnly(12, 0, 0), new TimeOnly(17, 30, 0), }, //Tuesday
+          new[] {new TimeOnly(10,30,0) }, //Wednesday
+          new[] {new TimeOnly(12,0,0), new TimeOnly(14, 0, 0), new TimeOnly(15, 30, 0), }, //Thursday
+          new[] {new TimeOnly(10,30,0), new TimeOnly(17, 30, 0), new TimeOnly(19, 0, 0), new TimeOnly(21, 0, 0) }, //Friday
+        };
+
+
+        for (int Period = 0; Period < Start[4].Length; Period++)
+        {
+            if (Time >= Start[4][Period] && Time <= End[4][Period])
+            {
+                switch (Period)
+                {
+                    case 0:
+                        return "Maths-B";
+                    case 1:
+                        return "Physics";
+                    case 2:
+                        return "FPMPastPaper";
+                    case 3:
+                        return "Language-B";
+                }
+            }
+        }
+    }*/
 }

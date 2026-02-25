@@ -18,6 +18,7 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         //Start All Validation and processes
         TakeSS = new RelayCommand(SS);
+        SS();
     }
 
     private void SS()
